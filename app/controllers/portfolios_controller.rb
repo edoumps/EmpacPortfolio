@@ -15,8 +15,8 @@ class PortfoliosController < ApplicationController
 
   def update
   @portfolio_item = Portfolio.find(params[:id])
-
-
+  
+  
     respond_to do |format|
       if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image))
         format.html { redirect_to portfolios_path, notice: "Portfolio was successfully updated." }
@@ -27,6 +27,7 @@ class PortfoliosController < ApplicationController
       end
     end
   end
+
   def new
     @portfolio_item = Portfolio.new
   end
@@ -46,6 +47,9 @@ class PortfoliosController < ApplicationController
   end
   
   def destroy
+    
+    @portfolio_item = Portfolio.find(params[:id])
+    
     @portfolio_item.destroy
 
     respond_to do |format|
