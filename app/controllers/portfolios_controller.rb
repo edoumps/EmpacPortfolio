@@ -4,6 +4,8 @@ class PortfoliosController < ApplicationController
 
     @portfolio_items = Portfolio.all
 
+    @name = "Mba Percy"
+
   end
 
 end

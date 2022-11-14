@@ -1,6 +1,14 @@
 <h1>Homepage</h1>
+
 <h1>Blog Posts</h1>
-<%= @posts.inspect %>
+<% @posts.each do |blog| %>
+  <%= blog.title %>
+  <%= blog.body %>
+<% end %>
 
 <h1>Skills</h1>
-<%= @skills.inspect %>
+
+<% @skills.each do |skill| %>
+  <%= skill.title %>
+  <%= skill.percent_utilized %>
+<% end %>
