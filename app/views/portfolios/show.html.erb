@@ -1,0 +1,14 @@
+
+<%= image_tag @portfolio_item.main_image %>
+
+<h1><%= @portfolio_item.title %></h1>
+
+<h2><%= @portfolio_item.subtitle %></h2>
+<h4><%= @portfolio_item.body %></h4>
+
+<div>
+  <%= link_to "Edit this Portfolio Item", edit_portfolio_path(@portfolio_item) %> |
+  <%= link_to "Back to portfolios", portfolios_path %>
+
+  <%= button_to "Destroy this portfolio item", @portfolio_item, method: :delete %>
+</div>
